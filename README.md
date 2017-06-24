@@ -1,5 +1,25 @@
 # Instruction to Run the code:
 
+- Download Assignment 1 folder from github in to your homedirectory
+- Go in beforewrangling folder 
+        - Exececute docker build -t assignment01beforewrangling .
+        - Execute   docker run -it assignment01beforewrangling
+        - Execute docker ps -l 
+        to get the ID of last run container
+        - Execute docker commit (ID received from above code) assignment01beforewrangling
+         Note: In above command brackets are not needed and it should be executed each time when the image is run
+        - The commit is necessary after each time the image is run or else data will be lost.
+ - Go in afterwrangling folder 
+        - Exececute docker build -t assignment01afterwrangling .
+        - Execute   docker run -it assignment01afterwrangling
+        - Execute docker ps -l 
+        to get the ID of last run container
+        - Execute docker commit (ID received from above code) assignment01afterwrangling
+         Note: In above command brackets are not needed and it should be executed each time when the image is run
+        - The commit is necessary after each time the image is run or else data will be lost.
+ - To get the images in the local: execute docker pull prashantvksingh/assignment1
+ - Log File will be created inside dockerImage. You can see it by executing ls inside /bin/bash of image path.
+
 # Report of the analysis 
 
 ## Step 1 : Initial data Ingestion 
