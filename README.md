@@ -179,7 +179,11 @@
 - Ideally a wet bulb temperature increases with the relative humidity and we have seen that relative humidity is more or less through the year.So, there is something wrong with the data provided.
 - As you can see there is a significant change here in analysis as we filled the missing values between 1997 to 2003. we are getting a straight because of the average values. 
 
+### Step 8. Dockerize the second part 
+- created the docker image of the second part with run.sh file 
 
+### step 9: 
+- Created a log file for the task everyday. Evry step in the code is recorded in a log file and that file is uploaded to s3 bucket everyday you run the code. 
 
 
 
