@@ -34,18 +34,18 @@ logging.basicConfig(filename = log_time+'.txt',
                     datefmt='%H:%M:%S',
                     level=logging.DEBUG)
 
-current_date = datetime.datetime.now().strftime("%d%m%Y")
-#current_date = '20062017'
-
 with open('configWrangle.json') as json_file:
     json_txt =json.load(json_file)
 AWS_ACCESS_KEY = json_txt["AWSAccess"]
 AWS_SECRET_KEY = json_txt["AWSSecret"]
 State=json_txt["state"]
 St_Id = json_txt["Station_Id"]
+RawData_Link = json_txt["rawData"]
 
 conn = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
 transfer = S3Transfer(conn)
+
+current_date = RawData_Link[-23:-15]
 
 filenames = []
 
