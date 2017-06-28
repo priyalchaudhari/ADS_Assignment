@@ -1,7 +1,9 @@
 # Instruction to Run the code:
 
 - Download Assignment 1 folder from github in to your homedirectory
-- To get the images in the local: execute docker pull prashantvksingh/assignment1
+- To get the images in the local execute: 
+   - docker pull prashantvksingh/assignment1:beforewrangling
+   - docker pull prashantvksingh/assignment1:afterwrangling
 ## Go in beforewrangling folder 
 - Exececute docker build -t assignment01beforewrangling .
 - Execute   docker run -it assignment01beforewrangling
