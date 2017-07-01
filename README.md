@@ -19,6 +19,15 @@
  - Note: In above command brackets are not needed and it should be executed each time when the image is run
  - The commit is necessary after each time the image is run or else data will be lost.
  - Log File will be created inside dockerImage. You can see it by executing ls inside /bin/bash of image path.
+ 
+ # Luigi Instructions
+- Create an environment variable *PYTHONPATH* containing below text:
+	- /Users/<user-name>/Team6_ADS_Assignment1/Luigi/Tasks
+- Open a bash terminal and execute *luigid* to start luigi in background
+- Open another bash terminal and navigate to the luigi tasks directory:
+	- cd /Users/<user-name>/Team6_ADS_Assignment1/Luigi/Tasks
+- Execute the command:
+   - python -m luigi --module UploadtoS3_Clean UploadCleanData --local-scheduler
 
 # Report of the analysis 
 
