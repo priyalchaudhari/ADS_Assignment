@@ -1,0 +1,103 @@
+------- Create Table ----------
+
+sqlcmd.exe -S prashantvikramsingh.database.windows.net -d Zillow -U prashant -P Pvs758993@ -I -Q "
+	CREATE TABLE ZillowData
+	(		
+		parcelid Bigint,
+		airconditioningtypeid FLOAT(30),
+		architecturalstyletypeid FLOAT(30),
+		basementsqft FLOAT(30),
+		bathroomcnt FLOAT(30),
+		bedroomcnt FLOAT(30),
+		buildingclasstypeid FLOAT(30),
+		buildingqualitytypeid FLOAT(30),
+		calculatedbathnbr FLOAT(30),
+		decktypeid FLOAT(30),
+		finishedfloor1squarefeet FLOAT(30),
+		calculatedfinishedsquarefeet FLOAT(30),
+		finishedsquarefeet12 FLOAT(30),
+		finishedsquarefeet13 FLOAT(30),
+		finishedsquarefeet15 FLOAT(30),
+		finishedsquarefeet50 FLOAT(30),
+		finishedsquarefeet6 FLOAT(30),
+		fips FLOAT(30),
+		fireplacecnt FLOAT(30),
+		fullbathcnt FLOAT(30),
+		garagecarcnt FLOAT(30),
+		garagetotalsqft FLOAT(30),
+		hashottuborspa VARCHAR(100),
+		heatingorsystemtypeid FLOAT(30),	
+		latitude FLOAT(30),
+		longitude FLOAT(30),
+		lotsizesquarefeet FLOAT(30),	
+		poolcnt FLOAT(30),
+		poolsizesum FLOAT(30),
+		pooltypeid10 FLOAT(30),
+		pooltypeid2 FLOAT(30),
+		pooltypeid7 FLOAT(30),
+		propertycountylandusecode VARCHAR(100),
+		propertylandusetypeid FLOAT(30),
+		propertyzoningdesc VARCHAR(100),
+		rawcensustractandblock VARCHAR(50),
+		regionidcity FLOAT(30),
+		regionidcounty FLOAT(30),
+		regionidneighborhood FLOAT(30),
+		regionidzip FLOAT(30),
+		roomcnt FLOAT(30),
+		storytypeid FLOAT(30),
+		threequarterbathnbr FLOAT(30),
+		typeconstructiontypeid FLOAT(30),
+		unitcnt FLOAT(30),
+		yardbuildingsqft17 FLOAT(30),
+		yardbuildingsqft26 FLOAT(30),
+		yearbuilt FLOAT(30),
+		numberofstories FLOAT(30),
+		fireplaceflag VARCHAR(100),
+		structuretaxvaluedollarcnt VARCHAR(50),
+		taxvaluedollarcnt FLOAT(30),
+		assessmentyear FLOAT(30),
+		landtaxvaluedollarcnt FLOAT(30),
+		taxamount FLOAT(30),
+		taxdelinquencyflag VARCHAR(100),
+		taxdelinquencyyear VARCHAR(50),
+		censustractandblock VARCHAR(50)
+	)
+	;
+"	
+
+------- Create Function ----------
+
+sqlcmd.exe -S prashantvikramsingh.database.windows.net -d Zillow -U prashant -P Pvs758993@ -I -Q "
+	create function distance(@latitude float, @longitude float)
+	returns TABLE
+	as
+	return
+	( 
+		select z.parcelid, z.latitude, z.longitude,3956*2*ASIN( SQRT(
+		POWER(SIN((@latitude-abs(z.latitude)) * pi()/180/2),
+		2) + COS(@latitude * pi()/180) * COS(abs(z.latitude) *
+		pi()/180) * POWER(SIN((@longitude - z.longitude) *
+		pi()/180/2), 2) )) as distance
+		from ZillowData as z
+		--group by dist.latitude, dist.longitude, dist.distance
+		--having dist.distance < 10
+	)	
+	;
+"	
+
+------- Bulk Loading ----------
+
+bcp ZillowData in C:\Users\Prashant\ADS_Assignment2\after_wrangle.csv -S prashantvikramsingh.database.windows.net -d Zillow -U prashant -P Pvs758993@ -q -c -t','
+
+
+------- Sample Output ----------
+
+sqlcmd.exe -S prashantvikramsingh.database.windows.net -d Zillow -U prashant -P Pvs758993@ -I -Q "SELECT top 10 parcelid, latitude, longitude FROM ZillowData;"
+
+
+
+
+
+
+
+
