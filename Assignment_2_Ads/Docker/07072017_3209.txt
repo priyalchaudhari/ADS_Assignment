@@ -1,0 +1,99 @@
+21:29:59,981 botocore.loaders DEBUG Loading JSON file: C:\Program Files\Anaconda3\lib\site-packages\boto3\data\s3\2006-03-01\resources-1.json
+21:30:00,13 botocore.loaders DEBUG Loading JSON file: C:\Program Files\Anaconda3\lib\site-packages\botocore\data\endpoints.json
+21:30:00,83 botocore.loaders DEBUG Loading JSON file: C:\Program Files\Anaconda3\lib\site-packages\botocore\data\s3\2006-03-01\service-2.json
+21:30:00,171 botocore.loaders DEBUG Loading JSON file: C:\Program Files\Anaconda3\lib\site-packages\botocore\data\_retry.json
+21:30:00,171 botocore.client DEBUG Registering retry handlers for service: s3
+21:30:00,175 botocore.hooks DEBUG Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x000001FCD9568598>
+21:30:00,176 botocore.hooks DEBUG Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x000001FCDC3DFD90>
+21:30:00,213 botocore.hooks DEBUG Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x000001FCD9568378>
+21:30:00,214 botocore.args DEBUG The s3 config key is not a dictionary type, ignoring its value of: None
+21:30:00,221 botocore.endpoint DEBUG Setting s3 timeout as (60, 60)
+21:30:00,222 botocore.client DEBUG Defaulting to S3 virtual host style addressing with path style addressing fallback.
+21:30:00,222 boto3.resources.factory DEBUG Loading s3:s3
+21:30:00,225 botocore.client DEBUG Registering retry handlers for service: s3
+21:30:00,226 botocore.hooks DEBUG Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x000001FCD9568598>
+21:30:00,226 botocore.hooks DEBUG Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x000001FCDC3DFD90>
+21:30:00,227 botocore.hooks DEBUG Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x000001FCD9568378>
+21:30:00,227 botocore.args DEBUG The s3 config key is not a dictionary type, ignoring its value of: None
+21:30:00,228 botocore.endpoint DEBUG Setting s3 timeout as (60, 60)
+21:30:00,229 botocore.client DEBUG Defaulting to S3 virtual host style addressing with path style addressing fallback.
+21:30:00,230 botocore.hooks DEBUG Event before-parameter-build.s3.ListBuckets: calling handler <function validate_bucket_name at 0x000001FCD95A29D8>
+21:30:00,230 botocore.hooks DEBUG Event before-parameter-build.s3.ListBuckets: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x000001FC802CCE80>>
+21:30:00,230 botocore.hooks DEBUG Event before-parameter-build.s3.ListBuckets: calling handler <function generate_idempotent_uuid at 0x000001FCD95A2620>
+21:30:00,230 botocore.hooks DEBUG Event before-call.s3.ListBuckets: calling handler <function add_expect_header at 0x000001FCD95A2EA0>
+21:30:00,230 botocore.hooks DEBUG Event before-call.s3.ListBuckets: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x000001FC802CCE80>>
+21:30:00,230 botocore.endpoint DEBUG Making request for OperationModel(name=ListBuckets) (verify_ssl=True) with params: {'url_path': '/', 'query_string': '', 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.4.4 Python/3.6.0 Windows/10 Botocore/1.5.80'}, 'body': b'', 'url': 'https://s3.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000001FC802CCBE0>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': None}}}
+21:30:00,231 botocore.hooks DEBUG Event request-created.s3.ListBuckets: calling handler <function disable_upload_callbacks at 0x000001FCD9612840>
+21:30:00,231 botocore.hooks DEBUG Event request-created.s3.ListBuckets: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001FC802CCBA8>>
+21:30:00,232 botocore.hooks DEBUG Event choose-signer.s3.ListBuckets: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x000001FC802B5908>>
+21:30:00,232 botocore.hooks DEBUG Event choose-signer.s3.ListBuckets: calling handler <function set_operation_specific_signer at 0x000001FCD95A2510>
+21:30:00,232 botocore.hooks DEBUG Event before-sign.s3.ListBuckets: calling handler <function fix_s3_host at 0x000001FCDC0788C8>
+21:30:00,232 botocore.auth DEBUG Calculating signature using v4 auth.
+21:30:00,232 botocore.auth DEBUG CanonicalRequest:
+GET
+/
+
+host:s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20170708T013000Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+21:30:00,232 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20170708T013000Z
+20170708/us-east-1/s3/aws4_request
+44c93aeaf1d954fa254a2b5e5f96a2d4a1143f1ce4bf6ad21624c2eca6bf6fbb
+21:30:00,232 botocore.auth DEBUG Signature:
+bf64dd1559ceb0ba521a519ad7f3b2b05d77c4fd7cee6d06d633293293202390
+21:30:00,232 botocore.hooks DEBUG Event request-created.s3.ListBuckets: calling handler <function enable_upload_callbacks at 0x000001FCD96128C8>
+21:30:00,248 botocore.endpoint DEBUG Sending http request: <PreparedRequest [GET]>
+21:30:00,249 botocore.vendored.requests.packages.urllib3.connectionpool INFO Starting new HTTPS connection (1): s3.amazonaws.com
+21:30:01,686 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "GET / HTTP/1.1" 200 None
+21:30:01,688 botocore.parsers DEBUG Response headers: {'x-amz-id-2': 'c4p/XMB0Mqy4lLugXpmGls1B1roTBNdKUk5TB0gP6KSG6k8RP/XpIovYEBpaeAk5REfzBeY/CeQ=', 'x-amz-request-id': 'B0C00B1786FDA95B', 'date': 'Sat, 08 Jul 2017 01:30:02 GMT', 'content-type': 'application/xml', 'transfer-encoding': 'chunked', 'server': 'AmazonS3'}
+21:30:01,688 botocore.parsers DEBUG Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Owner><ID>45d1e9f4821020003c6287e17659802e81c6a65d2b3052438955f29d534b5355</ID><DisplayName>singh.pras</DisplayName></Owner><Buckets><Bucket><Name>Team6ILAssignment01</Name><CreationDate>2017-07-02T15:00:50.000Z</CreationDate></Bucket><Bucket><Name>ZillowDataTeam06</Name><CreationDate>2017-07-07T20:32:19.000Z</CreationDate></Bucket></Buckets></ListAllMyBucketsResult>'
+21:30:01,736 botocore.hooks DEBUG Event needs-retry.s3.ListBuckets: calling handler <botocore.retryhandler.RetryHandler object at 0x000001FC80249CF8>
+21:30:01,737 botocore.retryhandler DEBUG No retry needed.
+21:30:01,737 botocore.hooks DEBUG Event needs-retry.s3.ListBuckets: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x000001FC802CCE80>>
+21:30:01,738 botocore.hooks DEBUG Event before-parameter-build.s3.ListObjects: calling handler <function set_list_objects_encoding_type_url at 0x000001FCD95A4C80>
+21:30:01,738 botocore.hooks DEBUG Event before-parameter-build.s3.ListObjects: calling handler <function validate_bucket_name at 0x000001FCD95A29D8>
+21:30:01,738 botocore.hooks DEBUG Event before-parameter-build.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x000001FC802CCE80>>
+21:30:01,738 botocore.hooks DEBUG Event before-parameter-build.s3.ListObjects: calling handler <function generate_idempotent_uuid at 0x000001FCD95A2620>
+21:30:01,740 botocore.hooks DEBUG Event before-call.s3.ListObjects: calling handler <function add_expect_header at 0x000001FCD95A2EA0>
+21:30:01,740 botocore.hooks DEBUG Event before-call.s3.ListObjects: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x000001FC802CCE80>>
+21:30:01,741 botocore.endpoint DEBUG Making request for OperationModel(name=ListObjects) (verify_ssl=True) with params: {'url_path': '/ZillowDataTeam06', 'query_string': {'encoding-type': 'url'}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.4.4 Python/3.6.0 Windows/10 Botocore/1.5.80'}, 'body': b'', 'url': 'https://s3.amazonaws.com/ZillowDataTeam06?encoding-type=url', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000001FC802CCBE0>, 'has_streaming_input': False, 'auth_type': None, 'encoding_type_auto_set': True, 'signing': {'bucket': 'ZillowDataTeam06'}}}
+21:30:01,741 botocore.hooks DEBUG Event request-created.s3.ListObjects: calling handler <function disable_upload_callbacks at 0x000001FCD9612840>
+21:30:01,741 botocore.hooks DEBUG Event request-created.s3.ListObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001FC802CCBA8>>
+21:30:01,742 botocore.hooks DEBUG Event choose-signer.s3.ListObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x000001FC802B5908>>
+21:30:01,742 botocore.hooks DEBUG Event choose-signer.s3.ListObjects: calling handler <function set_operation_specific_signer at 0x000001FCD95A2510>
+21:30:01,742 botocore.hooks DEBUG Event before-sign.s3.ListObjects: calling handler <function fix_s3_host at 0x000001FCDC0788C8>
+21:30:01,743 botocore.auth DEBUG Calculating signature using v4 auth.
+21:30:01,743 botocore.auth DEBUG CanonicalRequest:
+GET
+/ZillowDataTeam06
+encoding-type=url
+host:s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20170708T013001Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+21:30:01,744 botocore.auth DEBUG StringToSign:
+AWS4-HMAC-SHA256
+20170708T013001Z
+20170708/us-east-1/s3/aws4_request
+d8be88fe3cb7bb82b86ec1abe12c99217083313fc0927c549bf2223c54db1f8c
+21:30:01,744 botocore.auth DEBUG Signature:
+bed74e379006760b52f06b363fc6752b945a41cecebf1a21f1bf5e1ac262bea5
+21:30:01,744 botocore.hooks DEBUG Event request-created.s3.ListObjects: calling handler <function enable_upload_callbacks at 0x000001FCD96128C8>
+21:30:01,745 botocore.endpoint DEBUG Sending http request: <PreparedRequest [GET]>
+21:30:01,789 botocore.vendored.requests.packages.urllib3.connectionpool DEBUG "GET /ZillowDataTeam06?encoding-type=url HTTP/1.1" 200 None
+21:30:01,790 botocore.parsers DEBUG Response headers: {'x-amz-id-2': 'GmrjW2wZkSN8TIQByvSiRd4EID7nVXnYweyXGOOcQyUvWBIoZU4wnh26TZtuUF7Fl0qGjsmWky4=', 'x-amz-request-id': '5366EA6018E0BC27', 'date': 'Sat, 08 Jul 2017 01:30:02 GMT', 'x-amz-bucket-region': 'us-east-1', 'content-type': 'application/xml', 'transfer-encoding': 'chunked', 'server': 'AmazonS3'}
+21:30:01,790 botocore.parsers DEBUG Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>ZillowDataTeam06</Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>after_wrangle.csv</Key><LastModified>2017-07-07T20:32:19.000Z</LastModified><ETag>&quot;0aacad9535883307cbde26c47945fc61-129&quot;</ETag><Size>1076588957</Size><Owner><ID>45d1e9f4821020003c6287e17659802e81c6a65d2b3052438955f29d534b5355</ID><DisplayName>singh.pras</DisplayName></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>'
+21:30:01,792 botocore.hooks DEBUG Event needs-retry.s3.ListObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x000001FC80249CF8>
+21:30:01,792 botocore.retryhandler DEBUG No retry needed.
+21:30:01,792 botocore.hooks DEBUG Event needs-retry.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x000001FC802CCE80>>
+21:30:01,793 botocore.hooks DEBUG Event after-call.s3.ListObjects: calling handler <function decode_list_object at 0x000001FCD95A4D08>
+21:30:01,793 root WARNING File already exist on s3!!!!

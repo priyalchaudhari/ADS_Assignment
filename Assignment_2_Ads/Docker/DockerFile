@@ -1,0 +1,28 @@
+# Use an official Python runtime as a base image
+FROM python:latest
+
+#Create working directory
+RUN mkdir -p /usr/src/Assignment2
+
+# Set the working directory to /usr/src/Assignment2
+WORKDIR /usr/src/Assignment2
+
+# Copy the current directory contents into the container at /usr/src/Assignment2
+COPY *.txt *.py *.json *.sh /usr/src/Assignment2/
+
+# Bundle Assignment2 source
+COPY . /usr/src/Assignment2
+
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
+RUN pip install jupyter notebook
+
+# Make port 8888 available to the world outside this container
+EXPOSE 8888
+
+# Define environment variable
+#ENV NAME World
+
+# Run app.py when the container launches
+CMD ["./run.sh"]
+#RUN /run.sh
